@@ -33,3 +33,10 @@ module Restaurante
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+
+config.generators do |g|
+    g.view_specs false
+    g.helper_specs false
+    g.controller_spec false
+  end
+

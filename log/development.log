@@ -831,3 +831,10 @@ Started GET "/" for 127.0.0.1 at 2016-04-25 18:49:48 -0300
 Processing by VisitorsController#index as HTML
   Rendered visitors/index.html.erb (0.4ms)
 Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-25 19:40:36 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  Rendered visitors/index.html.erb (1.8ms)
+Completed 200 OK in 25ms (Views: 12.6ms | ActiveRecord: 0.0ms)

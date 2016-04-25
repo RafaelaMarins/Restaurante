@@ -44,7 +44,8 @@ group :development, :test do
   gem 'byebug'
   
 
-  gem 'sqlite3'
+  gem 'sqlite3', group: [:development,:test]
+  gem 'pg', group: :production
 
   gem 'factory_girl_rails'
   gem 'faker'

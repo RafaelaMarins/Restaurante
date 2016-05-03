@@ -3,12 +3,12 @@
 
   .form-inputs
     = f.input :nome
-    = f.input :cpf
-    = f.input :endereco
+    = f.input :cpf, label: "CPF"
+    = f.input :endereco, label: "Endereço"
     = f.input :numero
     = f.input :cidade
     = f.input :estado
     = f.input :email
 
   .form-actions
-    = f.button :submit
+    = f.submit "Salvar"

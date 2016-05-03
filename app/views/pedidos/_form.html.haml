@@ -1,0 +1,11 @@
+= simple_form_for(@pedido) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :pedido
+    = f.input :data
+    = f.input :situacao
+    = f.association :cliente, label_method: :nome
+
+  .form-actions
+    = f.button :submit

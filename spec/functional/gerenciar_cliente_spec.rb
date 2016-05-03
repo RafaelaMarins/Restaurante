@@ -2,7 +2,6 @@
 
 feature 'gerenciar Cliente' do
 
-
 	scenario 'incluir Cliente' do
 		
 		visit new_cliente_path
@@ -10,6 +9,7 @@ feature 'gerenciar Cliente' do
 	end
 
 	scenario 'alterar Cliente' do
+		
 		cliente = FactoryGirl.create(:cliente)
 		visit edit_cliente_path(cliente)
 		preencher_e_verificar_cliente
@@ -43,4 +43,4 @@ feature 'gerenciar Cliente' do
 
 	end
 end
-
+	

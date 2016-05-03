@@ -43,9 +43,9 @@ gem 'ransack', '~> 1.5.1'
 group :development, :test do
   gem 'byebug'
   
-
   gem 'sqlite3', group: [:development,:test]
   gem 'pg', group: :production
+  
 
   gem 'factory_girl_rails'
   gem 'faker'
@@ -68,7 +68,7 @@ group :test do
 end
 
 group :production do
-  #gem 'pg'
+  gem 'pg'
   gem 'rails_12factor'
 end
 

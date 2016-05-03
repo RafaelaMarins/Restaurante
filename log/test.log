@@ -1,0 +1,457 @@
+  [1m[36m (6.5ms)[0m  [1mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cpf" varchar, "endereco" varchar, "numero" varchar, "cidade" varchar, "estado" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160411235941')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.5ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-25 23:21:55.109936"], ["updated_at", "2016-04-25 23:21:55.109936"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 20:21:55 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mCliente Load (0.3ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.haml (10.1ms)
+Completed 200 OK in 77ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+Started DELETE "/clientes/1" for 127.0.0.1 at 2016-04-25 20:21:55 -0300
+Processing by ClientesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.2ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "clientes" WHERE "clientes"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes
+Completed 302 Found in 52ms (ActiveRecord: 0.5ms)
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 20:21:55 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mCliente Load (0.1ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered clientes/index.html.haml (0.6ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/clientes/new" for 127.0.0.1 at 2016-04-25 20:21:55 -0300
+Processing by ClientesController#new as HTML
+  Rendered clientes/_form.html.haml (695.1ms)
+  Rendered clientes/new.html.haml (700.2ms)
+Completed 200 OK in 702ms (Views: 701.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-25 23:21:56.057869"], ["updated_at", "2016-04-25 23:21:56.057869"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/clientes/1/edit" for 127.0.0.1 at 2016-04-25 20:21:56 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered clientes/_form.html.haml (7.9ms)
+  Rendered clientes/edit.html.haml (9.6ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (21.6ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2016-04-25 21:58:38 -0300
+Processing by ClientesController#new as HTML
+  Rendered clientes/_form.html.haml (681.8ms)
+  Rendered clientes/new.html.haml (689.0ms)
+Completed 200 OK in 784ms (Views: 737.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-26 00:58:39.002167"], ["updated_at", "2016-04-26 00:58:39.002167"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/clientes/1/edit" for 127.0.0.1 at 2016-04-25 21:58:39 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clientes/_form.html.haml (27.0ms)
+  Rendered clientes/edit.html.haml (29.5ms)
+Completed 200 OK in 71ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-26 00:58:39.094041"], ["updated_at", "2016-04-26 00:58:39.094041"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 21:58:39 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.haml (4.5ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+Started DELETE "/clientes/1" for 127.0.0.1 at 2016-04-25 21:58:39 -0300
+Processing by ClientesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "clientes" WHERE "clientes"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 21:58:39 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered clientes/index.html.haml (0.7ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.0ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2016-04-25 22:00:59 -0300
+Processing by ClientesController#new as HTML
+  Rendered clientes/_form.html.haml (509.4ms)
+  Rendered clientes/new.html.haml (514.5ms)
+Completed 200 OK in 546ms (Views: 524.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-26 01:01:00.240763"], ["updated_at", "2016-04-26 01:01:00.240763"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/clientes/1/edit" for 127.0.0.1 at 2016-04-25 22:01:00 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clientes/_form.html.haml (8.0ms)
+  Rendered clientes/edit.html.haml (9.5ms)
+Completed 200 OK in 19ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-26 01:01:00.273151"], ["updated_at", "2016-04-26 01:01:00.273151"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 22:01:00 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.haml (4.4ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+Started DELETE "/clientes/1" for 127.0.0.1 at 2016-04-25 22:01:00 -0300
+Processing by ClientesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "clientes" WHERE "clientes"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 22:01:00 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mCliente Load (0.1ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered clientes/index.html.haml (0.7ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.2ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2016-04-25 22:05:53 -0300
+Processing by ClientesController#new as HTML
+  Rendered clientes/_form.html.haml (494.7ms)
+  Rendered clientes/new.html.haml (500.5ms)
+Completed 200 OK in 531ms (Views: 510.4ms | ActiveRecord: 0.3ms)
+Started POST "/clientes" for 127.0.0.1 at 2016-04-25 22:05:53 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Rafaela", "cpf"=>"123123123", "endereco"=>"Rua zero", "numero"=>"29", "cidade"=>"Campos", "estado"=>"RJ", "email"=>"rafaela.marins0@gmail.com"}, "commit"=>"Salvar"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Rafaela"], ["cpf", "123123123"], ["endereco", "Rua zero"], ["numero", "29"], ["cidade", "Campos"], ["estado", "RJ"], ["email", "rafaela.marins0@gmail.com"], ["created_at", "2016-04-26 01:05:53.870315"], ["updated_at", "2016-04-26 01:05:53.870315"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2016-04-25 22:05:53 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clientes/show.html.haml (20.9ms)
+Completed 200 OK in 52ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-26 01:05:53.935628"], ["updated_at", "2016-04-26 01:05:53.935628"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 22:05:53 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mCliente Load (0.1ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.haml (5.1ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms)
+Started DELETE "/clientes/1" for 127.0.0.1 at 2016-04-25 22:05:53 -0300
+Processing by ClientesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "clientes" WHERE "clientes"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 22:05:53 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered clientes/index.html.haml (0.7ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-26 01:05:53.957462"], ["updated_at", "2016-04-26 01:05:53.957462"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/clientes/1/edit" for 127.0.0.1 at 2016-04-25 22:05:53 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered clientes/_form.html.haml (8.0ms)
+  Rendered clientes/edit.html.haml (9.8ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.1ms)
+Started PATCH "/clientes/1" for 127.0.0.1 at 2016-04-25 22:05:53 -0300
+Processing by ClientesController#update as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Rafaela", "cpf"=>"123123123", "endereco"=>"Rua zero", "numero"=>"29", "cidade"=>"Campos", "estado"=>"RJ", "email"=>"rafaela.marins0@gmail.com"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[36mCliente Load (0.1ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "clientes" SET "nome" = ?, "cpf" = ?, "endereco" = ?, "numero" = ?, "cidade" = ?, "estado" = ?, "email" = ?, "updated_at" = ? WHERE "clientes"."id" = ?[0m  [["nome", "Rafaela"], ["cpf", "123123123"], ["endereco", "Rua zero"], ["numero", "29"], ["cidade", "Campos"], ["estado", "RJ"], ["email", "rafaela.marins0@gmail.com"], ["updated_at", "2016-04-26 01:05:53.985168"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2016-04-25 22:05:53 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.1ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clientes/show.html.haml (0.4ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.3ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-26 01:13:05.164464"], ["updated_at", "2016-04-26 01:13:05.164464"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/clientes/1/edit" for 127.0.0.1 at 2016-04-25 22:13:05 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clientes/_form.html.haml (508.7ms)
+  Rendered clientes/edit.html.haml (514.1ms)
+Completed 200 OK in 542ms (Views: 524.2ms | ActiveRecord: 0.2ms)
+Started PATCH "/clientes/1" for 127.0.0.1 at 2016-04-25 22:13:05 -0300
+Processing by ClientesController#update as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Rafaela", "cpf"=>"123123123", "endereco"=>"Rua zero", "numero"=>"29", "cidade"=>"Campos", "estado"=>"RJ", "email"=>"rafaela.marins0@gmail.com"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "clientes" SET "nome" = ?, "cpf" = ?, "endereco" = ?, "numero" = ?, "cidade" = ?, "estado" = ?, "email" = ?, "updated_at" = ? WHERE "clientes"."id" = ?  [["nome", "Rafaela"], ["cpf", "123123123"], ["endereco", "Rua zero"], ["numero", "29"], ["cidade", "Campos"], ["estado", "RJ"], ["email", "rafaela.marins0@gmail.com"], ["updated_at", "2016-04-26 01:13:05.745771"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2016-04-25 22:13:05 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered clientes/show.html.haml (3.1ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/clientes/new" for 127.0.0.1 at 2016-04-25 22:13:05 -0300
+Processing by ClientesController#new as HTML
+  Rendered clientes/_form.html.haml (8.8ms)
+  Rendered clientes/new.html.haml (10.2ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2016-04-25 22:13:05 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Rafaela", "cpf"=>"123123123", "endereco"=>"Rua zero", "numero"=>"29", "cidade"=>"Campos", "estado"=>"RJ", "email"=>"rafaela.marins0@gmail.com"}, "commit"=>"Salvar"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["nome", "Rafaela"], ["cpf", "123123123"], ["endereco", "Rua zero"], ["numero", "29"], ["cidade", "Campos"], ["estado", "RJ"], ["email", "rafaela.marins0@gmail.com"], ["created_at", "2016-04-26 01:13:05.790567"], ["updated_at", "2016-04-26 01:13:05.790567"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2016-04-25 22:13:05 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered clientes/show.html.haml (0.4ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-26 01:13:05.806619"], ["updated_at", "2016-04-26 01:13:05.806619"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 22:13:05 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered clientes/index.html.haml (4.3ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+Started DELETE "/clientes/1" for 127.0.0.1 at 2016-04-25 22:13:05 -0300
+Processing by ClientesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.1ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "clientes" WHERE "clientes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/clientes
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 22:13:05 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mCliente Load (0.3ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.haml (1.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.7ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/clientes/new" for 127.0.0.1 at 2016-04-25 22:14:17 -0300
+Processing by ClientesController#new as HTML
+  Rendered clientes/_form.html.haml (520.4ms)
+  Rendered clientes/new.html.haml (525.7ms)
+Completed 200 OK in 557ms (Views: 535.6ms | ActiveRecord: 0.4ms)
+Started POST "/clientes" for 127.0.0.1 at 2016-04-25 22:14:18 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Rafaela", "cpf"=>"123123123", "endereco"=>"Rua zero", "numero"=>"29", "cidade"=>"Campos", "estado"=>"RJ", "email"=>"rafaela.marins0@gmail.com"}, "commit"=>"Salvar"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Rafaela"], ["cpf", "123123123"], ["endereco", "Rua zero"], ["numero", "29"], ["cidade", "Campos"], ["estado", "RJ"], ["email", "rafaela.marins0@gmail.com"], ["created_at", "2016-04-26 01:14:18.551685"], ["updated_at", "2016-04-26 01:14:18.551685"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2016-04-25 22:14:18 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.3ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clientes/show.html.haml (3.3ms)
+Completed 200 OK in 12ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-26 01:14:18.580020"], ["updated_at", "2016-04-26 01:14:18.580020"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 22:14:18 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.haml (4.6ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+Started DELETE "/clientes/1" for 127.0.0.1 at 2016-04-25 22:14:18 -0300
+Processing by ClientesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "clientes" WHERE "clientes"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/clientes" for 127.0.0.1 at 2016-04-25 22:14:18 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered clientes/index.html.haml (0.7ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["nome", "MyString"], ["cpf", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cidade", "MyString"], ["estado", "MyString"], ["email", "MyString"], ["created_at", "2016-04-26 01:14:18.601901"], ["updated_at", "2016-04-26 01:14:18.601901"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/clientes/1/edit" for 127.0.0.1 at 2016-04-25 22:14:18 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered clientes/_form.html.haml (8.4ms)
+  Rendered clientes/edit.html.haml (12.0ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.1ms)
+Started PATCH "/clientes/1" for 127.0.0.1 at 2016-04-25 22:14:18 -0300
+Processing by ClientesController#update as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Rafaela", "cpf"=>"123123123", "endereco"=>"Rua zero", "numero"=>"29", "cidade"=>"Campos", "estado"=>"RJ", "email"=>"rafaela.marins0@gmail.com"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[36mCliente Load (0.1ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "clientes" SET "nome" = ?, "cpf" = ?, "endereco" = ?, "numero" = ?, "cidade" = ?, "estado" = ?, "email" = ?, "updated_at" = ? WHERE "clientes"."id" = ?[0m  [["nome", "Rafaela"], ["cpf", "123123123"], ["endereco", "Rua zero"], ["numero", "29"], ["cidade", "Campos"], ["estado", "RJ"], ["email", "rafaela.marins0@gmail.com"], ["updated_at", "2016-04-26 01:14:18.631398"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2016-04-25 22:14:18 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.1ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clientes/show.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cpf" varchar, "endereco" varchar, "numero" varchar, "cidade" varchar, "estado" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160411235941')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cpf" varchar, "endereco" varchar, "numero" varchar, "cidade" varchar, "estado" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (8.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (5.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160411235941')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cpf" varchar, "endereco" varchar, "numero" varchar, "cidade" varchar, "estado" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160411235941')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cpf" varchar, "endereco" varchar, "numero" varchar, "cidade" varchar, "estado" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160411235941')
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cpf" varchar, "endereco" varchar, "numero" varchar, "cidade" varchar, "estado" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.6ms)[0m  CREATE TABLE "pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pedido" varchar, "data" varchar, "situacao" varchar, "Cliente_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426014307')[0m
+  [1m[35m (2.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160411235941')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

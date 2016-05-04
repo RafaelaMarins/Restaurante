@@ -1,9 +1,6 @@
 %p#notice= notice
 
 %p
-  %b Pedido:
-  = @pedido.pedido
-%p
   %b Data:
   = @pedido.data
 %p
@@ -11,7 +8,7 @@
   = @pedido.situacao
 %p
   %b Cliente:
-  = @pedido.Cliente
+  = @pedido.cliente
 
 = link_to 'Edit', edit_pedido_path(@pedido)
 \|

@@ -43,10 +43,8 @@ gem 'ransack', '~> 1.5.1'
 group :development, :test do
   gem 'byebug'
   
-  gem 'sqlite3', group: [:development,:test]
-  gem 'pg', group: :production
+  gem 'sqlite3'
   
-
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'pry-rails'

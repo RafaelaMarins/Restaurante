@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :pedido do
-    pedido "MyString"
-    data "MyString"
+    data "2016-05-04"
     situacao "MyString"
-    Cliente ""
+    cliente nil
   end
 end

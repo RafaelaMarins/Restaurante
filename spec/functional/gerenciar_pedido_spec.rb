@@ -1,3 +1,4 @@
+
 feature 'gerenciar Pedido' do
 
   before(:each) do
@@ -7,26 +8,25 @@ feature 'gerenciar Pedido' do
 
   let(:dados) do {
 
-    pedido: "001",
-    data: "25/04",
+    data: "04/05",
     situacao: "preparando",
     cliente: "Rafaela"
    }
   end
 
-  scenario 'incluir produto' do #, :js => true  do
-    visit new_produto_path
+  scenario 'incluir pedido' do #, :js => true  do
+    visit new_pedido_path
     preencher(dados)
     click_button 'Salvar'
     verificar(dados)
 
   end
 
-  scenario 'alterar produto' do #, :js => true  do
+  scenario 'alterar pedido' do #, :js => true  do
 
-    produto = FactoryGirl.create(:produto, cliente: @cliente )
+    pedido = FactoryGirl.create(:pedido, cliente: @cliente )
 
-    visit edit_produto_path(produto)
+    visit edit_pedido_path(pedido)
     preencher(dados)
     click_button 'Salvar'
     verificar(dados)
@@ -34,18 +34,17 @@ feature 'gerenciar Pedido' do
 
   end
 
-  scenario 'excluir produto' do #, :js => true  do
+  scenario 'excluir pedido' do #, :js => true  do
 
-    produto = FactoryGirl.create(:produto, cliente: @cliente)
-    visit produtos_path    
+    pedido = FactoryGirl.create(:pedido, cliente: @cliente)
+    visit pedidos_path    
     click_link 'Excluir'
 
   end
 
   def preencher(dados)
 
-    fill_in 'Pedido',  with: dados[:pedido]
-    fill_in 'Data',  with: dados[:data]
+    fill_in 'Data', with: dados[:data:]
     fill_in 'Situação', with: dados[:situacao]
     select dados[:cliente], from: "Cliente"
     
@@ -54,7 +53,6 @@ feature 'gerenciar Pedido' do
 
   def verificar(dados)
 
-    page.should have_content "Pedido: #{dados[:pedido]}"
     page.should have_content "Data: #{dados[:data]}"
     page.should have_content "Situação: #{dados[:situacao]}"
     page.should have_content "Cliente: #{dados[:cliente]}"

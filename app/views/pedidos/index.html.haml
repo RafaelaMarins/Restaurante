@@ -3,7 +3,6 @@
 %table
   %thead
     %tr
-      %th Pedido
       %th Data
       %th Situacao
       %th Cliente
@@ -14,13 +13,12 @@
   %tbody
     - @pedidos.each do |pedido|
       %tr
-        %td= pedido.pedido
         %td= pedido.data
         %td= pedido.situacao
-        %td= pedido.Cliente
+        %td= pedido.cliente
         %td= link_to 'Show', pedido
         %td= link_to 'Edit', edit_pedido_path(pedido)
-        %td= link_to 'Destroy', pedido, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Excluir', pedido, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

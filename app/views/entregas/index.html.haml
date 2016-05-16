@@ -1,0 +1,25 @@
+%h1 Listing entregas
+
+%table
+  %thead
+    %tr
+      %th Data
+      %th Situacao
+      %th Pedido
+      %th
+      %th
+      %th
+
+  %tbody
+    - @entregas.each do |entrega|
+      %tr
+        %td= entrega.data
+        %td= entrega.situacao
+        %td= entrega.Pedido
+        %td= link_to 'Show', entrega
+        %td= link_to 'Edit', edit_entrega_path(entrega)
+        %td= link_to 'Excluir', entrega, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Entrega', new_entrega_path

@@ -8,7 +8,7 @@
   = @pedido.situacao
 %p
   %b Cliente:
-  = @pedido.cliente
+  = @pedido.cliente.nome
 
 = link_to 'Edit', edit_pedido_path(@pedido)
 \|

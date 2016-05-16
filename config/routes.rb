@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :entregas
+  resources :cardapios
   resources :pedidos
   resources :clientes
   root to: 'visitors#index'

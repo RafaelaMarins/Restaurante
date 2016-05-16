@@ -2476,3 +2476,2104 @@ Migrating to CreatePedidos (20160504215020)
             FROM sqlite_temp_master
             WHERE name='index_pedidos_on_cliente_id' AND type='index'
 [0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-05 17:04:54 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  Rendered visitors/index.html.erb (1.8ms)
+Completed 200 OK in 35ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes" for 127.0.0.1 at 2016-05-05 17:05:02 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mCliente Load (0.3ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered clientes/index.html.haml (6.9ms)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/clientes/new" for 127.0.0.1 at 2016-05-05 17:05:03 -0300
+Processing by ClientesController#new as HTML
+  Rendered clientes/_form.html.haml (538.1ms)
+  Rendered clientes/new.html.haml (542.7ms)
+Completed 200 OK in 555ms (Views: 545.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-05 17:05:14 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  Rendered pedidos/index.html.haml (6.2ms)
+Completed 200 OK in 30ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pedidos/new" for 127.0.0.1 at 2016-05-05 17:05:15 -0300
+Processing by PedidosController#new as HTML
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered pedidos/_form.html.haml (37.0ms)
+  Rendered pedidos/new.html.haml (40.4ms)
+Completed 200 OK in 53ms (Views: 43.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-05 17:05:22 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.4ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  Rendered pedidos/index.html.haml (10.3ms)
+Completed 200 OK in 20ms (Views: 16.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/clientes" for 127.0.0.1 at 2016-05-05 17:05:30 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered clientes/index.html.haml (1.2ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clientes/new" for 127.0.0.1 at 2016-05-05 17:05:32 -0300
+Processing by ClientesController#new as HTML
+  Rendered clientes/_form.html.haml (31.4ms)
+  Rendered clientes/new.html.haml (32.9ms)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/clientes" for 127.0.0.1 at 2016-05-05 17:05:42 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"71x8Pas/ORV92uQNhS0LVEn0RMgEmvVcppItJGkqLejdal+NckXy+slnuaEe3G3sstoALQrJ1AnDs6wrPkg1uA==", "cliente"=>{"nome"=>"rafa", "cpf"=>"111", "endereco"=>"rua", "numero"=>"29", "cidade"=>"campos", "estado"=>"rj", "email"=>"ra@fa"}, "commit"=>"Salvar"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["nome", "rafa"], ["cpf", "111"], ["endereco", "rua"], ["numero", "29"], ["cidade", "campos"], ["estado", "rj"], ["email", "ra@fa"], ["created_at", "2016-05-05 20:05:42.518808"], ["updated_at", "2016-05-05 20:05:42.518808"]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/clientes/1
+Completed 302 Found in 19ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/clientes/1" for 127.0.0.1 at 2016-05-05 17:05:42 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.3ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered clientes/show.html.haml (6.1ms)
+Completed 200 OK in 17ms (Views: 9.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/clientes" for 127.0.0.1 at 2016-05-05 17:05:43 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.haml (1.6ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-05 17:05:49 -0300
+Processing by PedidosController#index as HTML
+  [1m[35mPedido Load (0.3ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  Rendered pedidos/index.html.haml (1.5ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pedidos/new" for 127.0.0.1 at 2016-05-05 17:05:50 -0300
+Processing by PedidosController#new as HTML
+  [1m[36mCliente Load (0.3ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered pedidos/_form.html.haml (40.1ms)
+  Rendered pedidos/new.html.haml (42.6ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/pedidos" for 127.0.0.1 at 2016-05-05 17:06:03 -0300
+Processing by PedidosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rKjhGKU+aHE0WepBaTQYcLM/jyBpvenWjswcfyDU+huensKofESjnoDkt+3yxX7ISBHLxWfuyIPr7Z1wd7biSw==", "pedido"=>{"data(1i)"=>"2016", "data(2i)"=>"5", "data(3i)"=>"5", "situacao"=>"aguardando", "cliente_id"=>"1"}, "commit"=>"Salvar"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "pedidos" ("situacao", "cliente_id", "data", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["situacao", "aguardando"], ["cliente_id", 1], ["data", "2016-05-05"], ["created_at", "2016-05-05 20:06:03.664893"], ["updated_at", "2016-05-05 20:06:03.664893"]]
+  [1m[35m (4.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/pedidos/1
+Completed 302 Found in 15ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/pedidos/1" for 127.0.0.1 at 2016-05-05 17:06:03 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCliente Load (0.2ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/show.html.haml (21.0ms)
+Completed 200 OK in 55ms (Views: 51.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-05 17:06:23 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/index.html.haml (3.4ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pedidos/1" for 127.0.0.1 at 2016-05-05 17:06:28 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/show.html.haml (31.8ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-05 17:06:29 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/index.html.haml (3.2ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pedidos/1" for 127.0.0.1 at 2016-05-05 17:06:30 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPedido Load (0.1ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/show.html.haml (2.0ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pedidos/1/edit" for 127.0.0.1 at 2016-05-05 17:06:32 -0300
+Processing by PedidosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPedido Load (0.1ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCliente Load (0.3ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered pedidos/_form.html.haml (22.7ms)
+  Rendered pedidos/edit.html.haml (25.3ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/pedidos/1" for 127.0.0.1 at 2016-05-05 17:06:41 -0300
+Processing by PedidosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zoOBpzo/NUln70V6sX+Lb7XthktzvK97lmwibTdVscz8taIX40X+ptNSGNYqju3XTsPCrn3vji7zTaNiYDepnA==", "pedido"=>{"data(1i)"=>"2016", "data(2i)"=>"5", "data(3i)"=>"5", "situacao"=>"", "cliente_id"=>""}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "pedidos" SET "situacao" = ?, "cliente_id" = ?, "updated_at" = ? WHERE "pedidos"."id" = ?[0m  [["situacao", ""], ["cliente_id", nil], ["updated_at", "2016-05-05 20:06:41.211845"], ["id", 1]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/pedidos/1
+Completed 302 Found in 12ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/pedidos/1" for 127.0.0.1 at 2016-05-05 17:06:41 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPedido Load (0.1ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/show.html.haml (0.6ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-05 17:06:43 -0300
+Processing by PedidosController#index as HTML
+  [1m[35mPedido Load (0.2ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  Rendered pedidos/index.html.haml (1.8ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pedidos/1/edit" for 127.0.0.1 at 2016-05-05 17:06:46 -0300
+Processing by PedidosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCliente Load (0.5ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered pedidos/_form.html.haml (38.9ms)
+  Rendered pedidos/edit.html.haml (41.8ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/pedidos/1" for 127.0.0.1 at 2016-05-05 17:06:52 -0300
+Processing by PedidosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IEAui7yPX3LgBFd9+KlZ7S0GfG5l+FOdWvoByZq00w8Sdg07ZfWUnVS5CtFjWD9V1ig4i2urcsg/24DGzdbLXw==", "pedido"=>{"data(1i)"=>"2016", "data(2i)"=>"5", "data(3i)"=>"5", "situacao"=>"aguardando", "cliente_id"=>"1"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "pedidos" SET "situacao" = ?, "cliente_id" = ?, "updated_at" = ? WHERE "pedidos"."id" = ?[0m  [["situacao", "aguardando"], ["cliente_id", 1], ["updated_at", "2016-05-05 20:06:52.887112"], ["id", 1]]
+  [1m[35m (3.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/pedidos/1
+Completed 302 Found in 13ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/pedidos/1" for 127.0.0.1 at 2016-05-05 17:06:52 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/show.html.haml (2.0ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-05 17:06:55 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/index.html.haml (2.9ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCardapios (20160505202658)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "cardapios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "descricao" varchar, "preco" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160505202658"]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pedidos_on_cliente_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pedidos_on_cliente_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pedidos_on_cliente_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pedidos_on_cliente_id' AND type='index'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-09 20:06:37 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  Rendered visitors/index.html.erb (1.3ms)
+Completed 200 OK in 22ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-09 20:06:48 -0300
+Processing by PedidosController#index as HTML
+  [1m[35mPedido Load (0.3ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  [1m[36mCliente Load (0.4ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/index.html.haml (35.4ms)
+Completed 200 OK in 46ms (Views: 39.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pedidos/new" for 127.0.0.1 at 2016-05-09 20:06:50 -0300
+Processing by PedidosController#new as HTML
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered pedidos/_form.html.haml (508.8ms)
+  Rendered pedidos/new.html.haml (516.9ms)
+Completed 200 OK in 522ms (Views: 520.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pedidos/new" for 127.0.0.1 at 2016-05-09 20:11:03 -0300
+Processing by PedidosController#new as HTML
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered pedidos/_form.html.haml (39.9ms)
+  Rendered pedidos/new.html.haml (41.4ms)
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pedidos/new" for 127.0.0.1 at 2016-05-09 20:11:07 -0300
+Processing by PedidosController#new as HTML
+  [1m[35mCliente Load (0.3ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered pedidos/_form.html.haml (36.0ms)
+  Rendered pedidos/new.html.haml (37.9ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pedidos/new" for 127.0.0.1 at 2016-05-09 20:11:08 -0300
+Processing by PedidosController#new as HTML
+  [1m[36mCliente Load (0.3ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered pedidos/_form.html.haml (40.8ms)
+  Rendered pedidos/new.html.haml (42.5ms)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pedidos/new" for 127.0.0.1 at 2016-05-09 20:11:30 -0300
+Processing by PedidosController#new as HTML
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered pedidos/_form.html.haml (20.2ms)
+  Rendered pedidos/new.html.haml (21.5ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pedidos/new" for 127.0.0.1 at 2016-05-09 20:19:55 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PedidosController#new as HTML
+  [1m[35mCliente Load (0.4ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered pedidos/_form.html.haml (476.8ms)
+  Rendered pedidos/new.html.haml (482.2ms)
+Completed 200 OK in 526ms (Views: 503.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/pedidos" for 127.0.0.1 at 2016-05-09 20:20:06 -0300
+Processing by PedidosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KKrTKPbax/hty71jkR3+EZEE4yhONAgXTv5tOXJk3IXPrbVvBTzGwX+iea73/twXzfX3L/mLacjcIQddAR6QZw==", "pedido"=>{"data"=>"34343", "situacao"=>"3434", "cliente_id"=>""}, "commit"=>"Salvar"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pedidos" ("situacao", "created_at", "updated_at") VALUES (?, ?, ?)  [["situacao", "3434"], ["created_at", "2016-05-09 23:20:06.325764"], ["updated_at", "2016-05-09 23:20:06.325764"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/pedidos/2
+Completed 302 Found in 23ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/pedidos/2" for 127.0.0.1 at 2016-05-09 20:20:06 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPedido Load (0.2ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered pedidos/show.html.haml (43.0ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.2ms)
+
+NoMethodError - undefined method `nome' for nil:NilClass:
+  app/views/pedidos/show.html.haml:11:in `_app_views_pedidos_show_html_haml__1028423110__1052524678'
+  actionview (4.2.6) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.6) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.0.1) lib/eventmachine.rb:194:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.6) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.6) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `<top (required)>'
+  spring (1.7.1) lib/spring/client/rails.rb:28:in `call'
+  spring (1.7.1) lib/spring/client/command.rb:7:in `call'
+  spring (1.7.1) lib/spring/client.rb:30:in `run'
+  spring (1.7.1) bin/spring:49:in `<top (required)>'
+  spring (1.7.1) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/a0a4f06f3dcfa359/variables" for 127.0.0.1 at 2016-05-09 20:20:06 -0300
+
+
+Started GET "/clientes" for 127.0.0.1 at 2016-05-09 20:20:29 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.haml (8.6ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-09 20:20:39 -0300
+Processing by PedidosController#index as HTML
+  [1m[35mPedido Load (0.2ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/index.html.haml (17.4ms)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pedidos/new" for 127.0.0.1 at 2016-05-09 20:20:41 -0300
+Processing by PedidosController#new as HTML
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered pedidos/_form.html.haml (23.6ms)
+  Rendered pedidos/new.html.haml (26.6ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/pedidos" for 127.0.0.1 at 2016-05-09 20:21:16 -0300
+Processing by PedidosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fQ66YVHgbHXbWJGuNfekPhTm5IsMBcu17EzZGKXQ84iaCdwmogZtTMkxVWNTFIY4SBfwjLu6qmp+k7N81qq/ag==", "pedido"=>{"data"=>"10/01/00", "situacao"=>"ssss", "cliente_id"=>"1"}, "commit"=>"Salvar"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "pedidos" ("situacao", "cliente_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["situacao", "ssss"], ["cliente_id", 1], ["created_at", "2016-05-09 23:21:16.556170"], ["updated_at", "2016-05-09 23:21:16.556170"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/pedidos/3
+Completed 302 Found in 17ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/pedidos/3" for 127.0.0.1 at 2016-05-09 20:21:16 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPedido Load (0.2ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCliente Load (0.1ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/show.html.haml (2.6ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEntregas (20160509233531)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "entregas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" varchar, "situacao" varchar, "Pedido_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_entregas_on_Pedido_id" ON "entregas" ("Pedido_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160509233531"]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entregas_on_Pedido_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entregas_on_Pedido_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pedidos_on_cliente_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pedidos_on_cliente_id' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-09 22:26:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  Rendered visitors/index.html.erb (1.7ms)
+Completed 200 OK in 43ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-09 22:26:27 -0300
+Processing by PedidosController#index as HTML
+  [1m[35mPedido Load (0.2ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/index.html.haml (54.9ms)
+Completed 200 OK in 78ms (Views: 67.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pedidos/3" for 127.0.0.1 at 2016-05-09 22:26:32 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/show.html.haml (3.4ms)
+Completed 200 OK in 13ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-09 22:26:34 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/index.html.haml (5.0ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pedidos/1" for 127.0.0.1 at 2016-05-09 22:26:39 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPedido Load (0.1ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCliente Load (0.1ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/show.html.haml (1.5ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/entrega" for 127.0.0.1 at 2016-05-09 22:27:04 -0300
+
+ActionController::RoutingError (No route matches [GET] "/entrega"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.0.1) lib/eventmachine.rb:194:in `run_machine'
+  eventmachine (1.2.0.1) lib/eventmachine.rb:194:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.6) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.6) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `require'
+  bin/rails:9:in `<top (required)>'
+  spring (1.7.1) lib/spring/client/rails.rb:28:in `load'
+  spring (1.7.1) lib/spring/client/rails.rb:28:in `call'
+  spring (1.7.1) lib/spring/client/command.rb:7:in `call'
+  spring (1.7.1) lib/spring/client.rb:30:in `run'
+  spring (1.7.1) bin/spring:49:in `<top (required)>'
+  spring (1.7.1) lib/spring/binstub.rb:11:in `load'
+  spring (1.7.1) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.7ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (43.3ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (167.6ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (700.9ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (833.5ms)
+
+
+Started GET "/entregas" for 127.0.0.1 at 2016-05-09 22:27:08 -0300
+Processing by EntregasController#index as HTML
+  [1m[35mEntrega Load (0.2ms)[0m  SELECT "entregas".* FROM "entregas"
+  Rendered entregas/index.html.haml (26.9ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entregas/new" for 127.0.0.1 at 2016-05-09 22:27:10 -0300
+Processing by EntregasController#new as HTML
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  Rendered entregas/_form.html.haml (138.8ms)
+  Rendered entregas/new.html.haml (143.3ms)
+Completed 200 OK in 193ms (Views: 176.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/entregas" for 127.0.0.1 at 2016-05-09 22:27:29 -0300
+Processing by EntregasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9tRwZ3fn10jsLKTuaxINFJMScY6mMjceldcqE1P83CAwh/v6QtwcKGaJleVvn9GBifjek1HIGCU8tvbERNE4Mw==", "entrega"=>{"data"=>"20/10/00", "situacao"=>"encerrado", "Pedido_id"=>"1"}, "commit"=>"Create Entrega"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entregas" ("data", "situacao", "Pedido_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["data", "20/10/00"], ["situacao", "encerrado"], ["Pedido_id", 1], ["created_at", "2016-05-10 01:27:29.843329"], ["updated_at", "2016-05-10 01:27:29.843329"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/entregas/1
+Completed 302 Found in 8ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/entregas/1" for 127.0.0.1 at 2016-05-09 22:27:29 -0300
+Processing by EntregasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntrega Load (0.2ms)[0m  [1mSELECT  "entregas".* FROM "entregas" WHERE "entregas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPedido Load (0.1ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/show.html.haml (4.6ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entregas/1/edit" for 127.0.0.1 at 2016-05-09 22:27:32 -0300
+Processing by EntregasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntrega Load (0.1ms)[0m  [1mSELECT  "entregas".* FROM "entregas" WHERE "entregas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPedido Load (0.3ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  Rendered entregas/_form.html.haml (22.7ms)
+  Rendered entregas/edit.html.haml (26.1ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entregas/1" for 127.0.0.1 at 2016-05-09 22:27:35 -0300
+Processing by EntregasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntrega Load (0.2ms)[0m  [1mSELECT  "entregas".* FROM "entregas" WHERE "entregas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPedido Load (0.2ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/show.html.haml (2.2ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entregas" for 127.0.0.1 at 2016-05-09 22:27:39 -0300
+Processing by EntregasController#index as HTML
+  [1m[36mEntrega Load (0.2ms)[0m  [1mSELECT "entregas".* FROM "entregas"[0m
+  [1m[35mPedido Load (0.1ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/index.html.haml (3.3ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entregas/1/edit" for 127.0.0.1 at 2016-05-09 22:27:43 -0300
+Processing by EntregasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntrega Load (0.2ms)[0m  [1mSELECT  "entregas".* FROM "entregas" WHERE "entregas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPedido Load (0.2ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  Rendered entregas/_form.html.haml (57.3ms)
+  Rendered entregas/edit.html.haml (59.0ms)
+Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/entregas/1" for 127.0.0.1 at 2016-05-09 22:27:51 -0300
+Processing by EntregasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vvvoOiyoviLORvf2biug53IrZDjRe3g+tdO5Z97ZdiN4qGOnGZN1QkTjxv1qpnxyaMHLJSaBVwUcsmWwyfSSMA==", "entrega"=>{"data"=>"20/10/00", "situacao"=>"caminho", "Pedido_id"=>"1"}, "commit"=>"Update Entrega", "id"=>"1"}
+  [1m[36mEntrega Load (0.2ms)[0m  [1mSELECT  "entregas".* FROM "entregas" WHERE "entregas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "entregas" SET "situacao" = ?, "updated_at" = ? WHERE "entregas"."id" = ?[0m  [["situacao", "caminho"], ["updated_at", "2016-05-10 01:27:51.631495"], ["id", 1]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/entregas/1
+Completed 302 Found in 9ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/entregas/1" for 127.0.0.1 at 2016-05-09 22:27:51 -0300
+Processing by EntregasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntrega Load (0.1ms)[0m  [1mSELECT  "entregas".* FROM "entregas" WHERE "entregas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPedido Load (0.2ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/show.html.haml (2.1ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entregas" for 127.0.0.1 at 2016-05-09 22:27:53 -0300
+Processing by EntregasController#index as HTML
+  [1m[36mEntrega Load (0.2ms)[0m  [1mSELECT "entregas".* FROM "entregas"[0m
+  [1m[35mPedido Load (0.1ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/index.html.haml (2.2ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entregas/1" for 127.0.0.1 at 2016-05-09 22:27:57 -0300
+Processing by EntregasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntrega Load (0.2ms)[0m  [1mSELECT  "entregas".* FROM "entregas" WHERE "entregas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPedido Load (0.1ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/show.html.haml (1.6ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entregas" for 127.0.0.1 at 2016-05-09 22:27:59 -0300
+Processing by EntregasController#index as HTML
+  [1m[36mEntrega Load (0.4ms)[0m  [1mSELECT "entregas".* FROM "entregas"[0m
+  [1m[35mPedido Load (0.2ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/index.html.haml (5.2ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entregas/1.json" for 127.0.0.1 at 2016-05-09 22:28:07 -0300
+Processing by EntregasController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mEntrega Load (0.1ms)[0m  [1mSELECT  "entregas".* FROM "entregas" WHERE "entregas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered entregas/show.json.jbuilder (34.8ms)
+Completed 200 OK in 59ms (Views: 58.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/entregas/.json" for 127.0.0.1 at 2016-05-09 22:28:17 -0300
+
+ActionController::RoutingError (No route matches [GET] "/entregas/.json"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.0.1) lib/eventmachine.rb:194:in `run_machine'
+  eventmachine (1.2.0.1) lib/eventmachine.rb:194:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.6) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.6) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `require'
+  bin/rails:9:in `<top (required)>'
+  spring (1.7.1) lib/spring/client/rails.rb:28:in `load'
+  spring (1.7.1) lib/spring/client/rails.rb:28:in `call'
+  spring (1.7.1) lib/spring/client/command.rb:7:in `call'
+  spring (1.7.1) lib/spring/client.rb:30:in `run'
+  spring (1.7.1) bin/spring:49:in `<top (required)>'
+  spring (1.7.1) lib/spring/binstub.rb:11:in `load'
+  spring (1.7.1) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (61.2ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.3ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/rafaela/.gem/repos/restaurante/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (47.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-09 22:28:34 -0300
+Processing by VisitorsController#index as HTML
+  Rendered visitors/index.html.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-15 21:26:40 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  Rendered visitors/index.html.erb (2.5ms)
+Completed 200 OK in 64ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/entregas" for 127.0.0.1 at 2016-05-15 21:26:51 -0300
+Processing by EntregasController#index as HTML
+  [1m[35mEntrega Load (0.2ms)[0m  SELECT "entregas".* FROM "entregas"
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered entregas/index.html.haml (33.4ms)
+Completed 200 OK in 44ms (Views: 37.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entregas/1" for 127.0.0.1 at 2016-05-15 21:26:55 -0300
+Processing by EntregasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEntrega Load (0.2ms)[0m  SELECT  "entregas".* FROM "entregas" WHERE "entregas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPedido Load (0.1ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered entregas/show.html.haml (3.3ms)
+Completed 200 OK in 12ms (Views: 5.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entregas" for 127.0.0.1 at 2016-05-15 21:26:58 -0300
+Processing by EntregasController#index as HTML
+  [1m[35mEntrega Load (0.4ms)[0m  SELECT "entregas".* FROM "entregas"
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered entregas/index.html.haml (4.4ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entregas/new" for 127.0.0.1 at 2016-05-15 21:26:59 -0300
+Processing by EntregasController#new as HTML
+  [1m[35mPedido Load (0.2ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  Rendered entregas/_form.html.haml (540.6ms)
+  Rendered entregas/new.html.haml (552.2ms)
+Completed 200 OK in 558ms (Views: 556.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/entregas" for 127.0.0.1 at 2016-05-15 21:27:10 -0300
+Processing by EntregasController#index as HTML
+  [1m[36mEntrega Load (0.2ms)[0m  [1mSELECT "entregas".* FROM "entregas"[0m
+  [1m[35mPedido Load (0.2ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/index.html.haml (4.6ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:27:17 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  [1m[35mCliente Load (0.2ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/index.html.haml (29.0ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pedidos/3/edit" for 127.0.0.1 at 2016-05-15 21:27:28 -0300
+Processing by PedidosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPedido Load (0.2ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCliente Load (0.3ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered pedidos/_form.html.haml (37.7ms)
+  Rendered pedidos/edit.html.haml (43.7ms)
+Completed 200 OK in 53ms (Views: 48.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pedidos/2" for 127.0.0.1 at 2016-05-15 21:27:32 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPedido Load (0.3ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered pedidos/show.html.haml (40.5ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.3ms)
+
+NoMethodError - undefined method `nome' for nil:NilClass:
+  app/views/pedidos/show.html.haml:11:in `_app_views_pedidos_show_html_haml__826365190__1053350148'
+  actionview (4.2.6) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.6) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.0.1) lib/eventmachine.rb:194:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.6) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.6) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `<top (required)>'
+  spring (1.7.1) lib/spring/client/rails.rb:28:in `call'
+  spring (1.7.1) lib/spring/client/command.rb:7:in `call'
+  spring (1.7.1) lib/spring/client.rb:30:in `run'
+  spring (1.7.1) bin/spring:49:in `<top (required)>'
+  spring (1.7.1) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/b7b3cdb0a5fd4b29/variables" for 127.0.0.1 at 2016-05-15 21:27:32 -0300
+
+
+Started GET "/pedidos/2" for 127.0.0.1 at 2016-05-15 21:28:59 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered pedidos/show.html.haml (4.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+NoMethodError - undefined method `nome' for nil:NilClass:
+  app/views/pedidos/show.html.haml:11:in `_app_views_pedidos_show_html_haml__826365190__1053350148'
+  actionview (4.2.6) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.6) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.0.1) lib/eventmachine.rb:194:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.6) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.6) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `<top (required)>'
+  spring (1.7.1) lib/spring/client/rails.rb:28:in `call'
+  spring (1.7.1) lib/spring/client/command.rb:7:in `call'
+  spring (1.7.1) lib/spring/client.rb:30:in `run'
+  spring (1.7.1) bin/spring:49:in `<top (required)>'
+  spring (1.7.1) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/85ecf010f13bc1b0/variables" for 127.0.0.1 at 2016-05-15 21:28:59 -0300
+
+
+Started GET "/pedidos/2" for 127.0.0.1 at 2016-05-15 21:29:39 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPedido Load (0.1ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered pedidos/show.html.haml (6.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms)
+
+NoMethodError - undefined method `nome' for #<Pedido:0x835a9230>:
+  activemodel (4.2.6) lib/active_model/attribute_methods.rb:433:in `method_missing'
+  app/views/pedidos/show.html.haml:11:in `_app_views_pedidos_show_html_haml__826365190__1045636468'
+  actionview (4.2.6) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.6) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.0.1) lib/eventmachine.rb:194:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.6) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.6) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `<top (required)>'
+  spring (1.7.1) lib/spring/client/rails.rb:28:in `call'
+  spring (1.7.1) lib/spring/client/command.rb:7:in `call'
+  spring (1.7.1) lib/spring/client.rb:30:in `run'
+  spring (1.7.1) bin/spring:49:in `<top (required)>'
+  spring (1.7.1) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/a35dbbb52e81b930/variables" for 127.0.0.1 at 2016-05-15 21:29:39 -0300
+
+
+Started GET "/pedidos/2" for 127.0.0.1 at 2016-05-15 21:29:57 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered pedidos/show.html.haml (12.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+NoMethodError - undefined method `nome' for #<Pedido:0x830cfc3c>:
+  activemodel (4.2.6) lib/active_model/attribute_methods.rb:433:in `method_missing'
+  app/views/pedidos/show.html.haml:11:in `_app_views_pedidos_show_html_haml__826365190__1048154068'
+  actionview (4.2.6) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.6) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.0.1) lib/eventmachine.rb:194:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.6) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.6) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `<top (required)>'
+  spring (1.7.1) lib/spring/client/rails.rb:28:in `call'
+  spring (1.7.1) lib/spring/client/command.rb:7:in `call'
+  spring (1.7.1) lib/spring/client.rb:30:in `run'
+  spring (1.7.1) bin/spring:49:in `<top (required)>'
+  spring (1.7.1) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/e7f8d8d3a95953d2/variables" for 127.0.0.1 at 2016-05-15 21:29:57 -0300
+
+
+Started GET "/pedidos/1" for 127.0.0.1 at 2016-05-15 21:30:04 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPedido Load (0.3ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/show.html.haml (6.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+NoMethodError - undefined method `nome' for #<Pedido:0x826f70ac>:
+  activemodel (4.2.6) lib/active_model/attribute_methods.rb:433:in `method_missing'
+  app/views/pedidos/show.html.haml:11:in `_app_views_pedidos_show_html_haml__826365190__1048154068'
+  actionview (4.2.6) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.6) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.0.1) lib/eventmachine.rb:194:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.6) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.6) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `<top (required)>'
+  spring (1.7.1) lib/spring/client/rails.rb:28:in `call'
+  spring (1.7.1) lib/spring/client/command.rb:7:in `call'
+  spring (1.7.1) lib/spring/client.rb:30:in `run'
+  spring (1.7.1) bin/spring:49:in `<top (required)>'
+  spring (1.7.1) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/ab8ba10aa5f21924/variables" for 127.0.0.1 at 2016-05-15 21:30:04 -0300
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:30:33 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.5ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  [1m[35mCliente Load (0.3ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/index.html.haml (7.9ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pedidos/new" for 127.0.0.1 at 2016-05-15 21:30:35 -0300
+Processing by PedidosController#new as HTML
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered pedidos/_form.html.haml (22.6ms)
+  Rendered pedidos/new.html.haml (25.9ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/pedidos" for 127.0.0.1 at 2016-05-15 21:31:01 -0300
+Processing by PedidosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HPq8xt5x4owaf5iqAvN4oqK1CLr/qBEsu/gLdk7yBIzUwVAcr6tiWsyMgikwf7FYrXV9cRrcGlxkIEJJzlsOjw==", "pedido"=>{"data"=>"15/05", "situacao"=>"pronto", "cliente_id"=>"1"}, "commit"=>"Salvar"}
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "pedidos" ("situacao", "cliente_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["situacao", "pronto"], ["cliente_id", 1], ["created_at", "2016-05-16 00:31:01.118022"], ["updated_at", "2016-05-16 00:31:01.118022"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/pedidos/4
+Completed 302 Found in 14ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/pedidos/4" for 127.0.0.1 at 2016-05-15 21:31:01 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPedido Load (0.2ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered pedidos/show.html.haml (7.2ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+NoMethodError - undefined method `nome' for #<Pedido:0x80cb56bc>:
+  activemodel (4.2.6) lib/active_model/attribute_methods.rb:433:in `method_missing'
+  app/views/pedidos/show.html.haml:11:in `_app_views_pedidos_show_html_haml__826365190__1048154068'
+  actionview (4.2.6) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.6) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.6) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.0.1) lib/eventmachine.rb:194:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.6) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.6) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.6) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `<top (required)>'
+  spring (1.7.1) lib/spring/client/rails.rb:28:in `call'
+  spring (1.7.1) lib/spring/client/command.rb:7:in `call'
+  spring (1.7.1) lib/spring/client.rb:30:in `run'
+  spring (1.7.1) bin/spring:49:in `<top (required)>'
+  spring (1.7.1) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/rafaela/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/66b1f5099e084432/variables" for 127.0.0.1 at 2016-05-15 21:31:01 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-15 21:36:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  Rendered visitors/index.html.erb (1.5ms)
+Completed 200 OK in 39ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:36:18 -0300
+Processing by PedidosController#index as HTML
+  [1m[35mPedido Load (0.2ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  [1m[36mCliente Load (0.4ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/index.html.haml (39.3ms)
+Completed 200 OK in 55ms (Views: 44.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pedidos/4" for 127.0.0.1 at 2016-05-15 21:36:23 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPedido Load (0.6ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/show.html.haml (9.0ms)
+Completed 200 OK in 30ms (Views: 14.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:36:25 -0300
+Processing by PedidosController#index as HTML
+  [1m[35mPedido Load (0.7ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/index.html.haml (10.0ms)
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pedidos/4/edit" for 127.0.0.1 at 2016-05-15 21:36:29 -0300
+Processing by PedidosController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPedido Load (0.3ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered pedidos/_form.html.haml (533.1ms)
+  Rendered pedidos/edit.html.haml (543.1ms)
+Completed 200 OK in 551ms (Views: 548.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:36:33 -0300
+Processing by PedidosController#index as HTML
+  [1m[35mPedido Load (0.4ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  [1m[36mCliente Load (0.3ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/index.html.haml (12.2ms)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:36:46 -0300
+Processing by PedidosController#index as HTML
+  [1m[35mPedido Load (0.4ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  [1m[36mCliente Load (0.4ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/index.html.haml (11.4ms)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pedidos/4" for 127.0.0.1 at 2016-05-15 21:36:48 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPedido Load (0.2ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCliente Load (0.3ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/show.html.haml (9.9ms)
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:36:50 -0300
+Processing by PedidosController#index as HTML
+  [1m[35mPedido Load (0.5ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  [1m[36mCliente Load (0.3ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/index.html.haml (13.0ms)
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pedidos/3" for 127.0.0.1 at 2016-05-15 21:37:15 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPedido Load (0.2ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/show.html.haml (2.5ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pedidos/3/edit" for 127.0.0.1 at 2016-05-15 21:37:18 -0300
+Processing by PedidosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPedido Load (0.3ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCliente Load (0.3ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered pedidos/_form.html.haml (32.6ms)
+  Rendered pedidos/edit.html.haml (34.7ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:37:22 -0300
+Processing by PedidosController#index as HTML
+  [1m[35mPedido Load (0.3ms)[0m  SELECT "pedidos".* FROM "pedidos"
+  [1m[36mCliente Load (0.1ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pedidos/index.html.haml (6.3ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/clientes" for 127.0.0.1 at 2016-05-15 21:37:26 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mCliente Load (1.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered clientes/index.html.haml (12.8ms)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/clientes/new" for 127.0.0.1 at 2016-05-15 21:37:28 -0300
+Processing by ClientesController#new as HTML
+  Rendered clientes/_form.html.haml (43.3ms)
+  Rendered clientes/new.html.haml (47.6ms)
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes" for 127.0.0.1 at 2016-05-15 21:37:51 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mCliente Load (0.4ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.haml (3.0ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/clientes/new" for 127.0.0.1 at 2016-05-15 21:37:52 -0300
+Processing by ClientesController#new as HTML
+  Rendered clientes/_form.html.haml (39.5ms)
+  Rendered clientes/new.html.haml (41.6ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/clientes" for 127.0.0.1 at 2016-05-15 21:38:10 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gVnzt0589IcmbOM2fp8Ay6HHqMHy871a7PNGgxHpYDNJYh9tP6Z0UfCf+bVME8kxrgfdCheHtiozKw+8kUBqMA==", "cliente"=>{"nome"=>"doug", "cpf"=>"123", "endereco"=>"asr", "numero"=>"29", "cidade"=>"campos", "estado"=>"rj", "email"=>"do@g"}, "commit"=>"Salvar"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "clientes" ("nome", "cpf", "endereco", "numero", "cidade", "estado", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "doug"], ["cpf", "123"], ["endereco", "asr"], ["numero", "29"], ["cidade", "campos"], ["estado", "rj"], ["email", "do@g"], ["created_at", "2016-05-16 00:38:10.722421"], ["updated_at", "2016-05-16 00:38:10.722421"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/clientes/2
+Completed 302 Found in 8ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/clientes/2" for 127.0.0.1 at 2016-05-15 21:38:10 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered clientes/show.html.haml (4.8ms)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clientes" for 127.0.0.1 at 2016-05-15 21:38:12 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mCliente Load (0.6ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered clientes/index.html.haml (5.2ms)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:38:19 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  [1m[35mCliente Load (0.2ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/index.html.haml (7.8ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pedidos/4" for 127.0.0.1 at 2016-05-15 21:38:22 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCliente Load (0.2ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/show.html.haml (2.8ms)
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:38:24 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pedidos/index.html.haml (26.5ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pedidos/4/edit" for 127.0.0.1 at 2016-05-15 21:38:26 -0300
+Processing by PedidosController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCliente Load (0.4ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered pedidos/_form.html.haml (25.4ms)
+  Rendered pedidos/edit.html.haml (27.6ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/pedidos/4" for 127.0.0.1 at 2016-05-15 21:38:34 -0300
+Processing by PedidosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HOEYsyLAyl0u8lg0opzua3NY9RwqwKkc9i8d55TgGhXU2vRpUxpKi/gBQreQECeRfJiA18+0omwp91TYFEkQFg==", "pedido"=>{"data"=>"15/05", "situacao"=>"pronto", "cliente_id"=>"2"}, "commit"=>"Salvar", "id"=>"4"}
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "pedidos" SET "cliente_id" = ?, "updated_at" = ? WHERE "pedidos"."id" = ?[0m  [["cliente_id", 2], ["updated_at", "2016-05-16 00:38:34.276858"], ["id", 4]]
+  [1m[35m (3.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/pedidos/4
+Completed 302 Found in 16ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/pedidos/4" for 127.0.0.1 at 2016-05-15 21:38:34 -0300
+Processing by PedidosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCliente Load (0.4ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered pedidos/show.html.haml (3.5ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:38:36 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.4ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  [1m[35mCliente Load (0.2ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCliente Load (0.2ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered pedidos/index.html.haml (9.7ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pedidos" for 127.0.0.1 at 2016-05-15 21:38:38 -0300
+Processing by PedidosController#index as HTML
+  [1m[36mPedido Load (0.2ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  [1m[35mCliente Load (0.2ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCliente Load (0.1ms)[0m  SELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered pedidos/index.html.haml (6.5ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entregas" for 127.0.0.1 at 2016-05-15 21:39:27 -0300
+Processing by EntregasController#index as HTML
+  [1m[36mEntrega Load (0.4ms)[0m  [1mSELECT "entregas".* FROM "entregas"[0m
+  [1m[35mPedido Load (0.2ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/index.html.haml (23.4ms)
+Completed 200 OK in 39ms (Views: 30.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entregas/1" for 127.0.0.1 at 2016-05-15 21:39:34 -0300
+Processing by EntregasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntrega Load (0.5ms)[0m  [1mSELECT  "entregas".* FROM "entregas" WHERE "entregas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPedido Load (0.3ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/show.html.haml (8.7ms)
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entregas" for 127.0.0.1 at 2016-05-15 21:39:35 -0300
+Processing by EntregasController#index as HTML
+  [1m[36mEntrega Load (0.4ms)[0m  [1mSELECT "entregas".* FROM "entregas"[0m
+  [1m[35mPedido Load (0.3ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/index.html.haml (4.9ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entregas/new" for 127.0.0.1 at 2016-05-15 21:39:37 -0300
+Processing by EntregasController#new as HTML
+  [1m[36mPedido Load (0.3ms)[0m  [1mSELECT "pedidos".* FROM "pedidos"[0m
+  Rendered entregas/_form.html.haml (28.1ms)
+  Rendered entregas/new.html.haml (31.8ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/entregas" for 127.0.0.1 at 2016-05-15 21:39:49 -0300
+Processing by EntregasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T8b9ZyRlAAbNTWcnRk6LxENFY1qfPrq+WsFrRG2xHRaH/RG9Vb+A0Bu+faR0wkI+TIUWkXpKsc6FGSJ77RgXFQ==", "entrega"=>{"data"=>"20/10/00", "situacao"=>"encerrado", "Pedido_id"=>"1"}, "commit"=>"Salvar"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entregas" ("data", "situacao", "Pedido_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["data", "20/10/00"], ["situacao", "encerrado"], ["Pedido_id", 1], ["created_at", "2016-05-16 00:39:49.274308"], ["updated_at", "2016-05-16 00:39:49.274308"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/entregas/2
+Completed 302 Found in 10ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/entregas/2" for 127.0.0.1 at 2016-05-15 21:39:49 -0300
+Processing by EntregasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEntrega Load (0.1ms)[0m  [1mSELECT  "entregas".* FROM "entregas" WHERE "entregas"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPedido Load (0.1ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered entregas/show.html.haml (1.4ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entregas" for 127.0.0.1 at 2016-05-15 21:39:51 -0300
+Processing by EntregasController#index as HTML
+  [1m[36mEntrega Load (0.4ms)[0m  [1mSELECT "entregas".* FROM "entregas"[0m
+  [1m[35mPedido Load (0.3ms)[0m  SELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pedidos".* FROM "pedidos" WHERE "pedidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered entregas/index.html.haml (8.1ms)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.7ms)

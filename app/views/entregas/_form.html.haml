@@ -1,0 +1,12 @@
+= simple_form_for(@entrega) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :data
+    = f.input :situacao, label: "situação"
+    = f.association :Pedido
+    f.input :nome
+    
+
+  .form-actions
+    = f.submit "Salvar"

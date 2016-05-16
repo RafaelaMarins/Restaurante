@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504215020) do
+ActiveRecord::Schema.define(version: 20160509233531) do
+
+  create_table "cardapios", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "descricao"
+    t.float    "preco"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clientes", force: :cascade do |t|
     t.string   "nome"
@@ -24,6 +32,16 @@ ActiveRecord::Schema.define(version: 20160504215020) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "entregas", force: :cascade do |t|
+    t.string   "data"
+    t.string   "situacao"
+    t.integer  "Pedido_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "entregas", ["Pedido_id"], name: "index_entregas_on_Pedido_id"
 
   create_table "pedidos", force: :cascade do |t|
     t.date     "data"

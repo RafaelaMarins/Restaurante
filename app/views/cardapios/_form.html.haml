@@ -1,0 +1,10 @@
+= simple_form_for(@cardapio) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome
+    = f.input :descricao, label: "Descrição"
+    = f.input :preco, label: "Preço"
+
+  .form-actions
+    = f.submit "Salvar"

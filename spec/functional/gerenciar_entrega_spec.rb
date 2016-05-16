@@ -1,32 +1,31 @@
-
-feature 'gerenciar Pedido' do
+feature 'gerenciar Entrega' do
 
   before(:each) do
-    @cliente = create(:cliente, nome: "Rafaela")
+    @entrega = create(:entrega)
   end
 
 
   let(:dados) do {
 
     data: "2016-05-04",
-    situacao: "preparando",
+    situacao: "caminho",
     cliente: "Rafaela"
    }
   end
 
-  scenario 'incluir pedido' do #, :js => true  do
-    visit new_pedido_path
+  scenario 'incluir entrega' do #, :js => true  do
+    visit new_entregar_path
     preencher(dados)
     click_button 'Salvar'
     verificar(dados)
 
   end
 
-  scenario 'alterar pedido' do #, :js => true  do
+  scenario 'alterar entrega' do #, :js => true  do
 
-    pedido = FactoryGirl.create(:pedido, cliente: @cliente )
+    entrega = FactoryGirl.create(:entrega )
 
-    visit edit_pedido_path(pedido)
+    visit edit_entrega_path(entrega)
     preencher(dados)
     click_button 'Salvar'
     verificar(dados)
@@ -34,10 +33,9 @@ feature 'gerenciar Pedido' do
 
   end
 
-  scenario 'excluir pedido' do #, :js => true  do
+  scenario 'excluir entrega' do #, :js => true  do
 
-    pedido = FactoryGirl.create(:pedido, cliente: @cliente)
-    visit pedidos_path    
+    entrega = FactoryGirl.create(:entrega)
     click_link 'Excluir'
 
   end

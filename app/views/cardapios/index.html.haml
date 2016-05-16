@@ -1,0 +1,25 @@
+%h1 Listing cardapios
+
+%table
+  %thead
+    %tr
+      %th Nome
+      %th Descricao
+      %th Preco
+      %th
+      %th
+      %th
+
+  %tbody
+    - @cardapios.each do |cardapio|
+      %tr
+        %td= cardapio.nome
+        %td= cardapio.descricao
+        %td= cardapio.preco
+        %td= link_to 'Show', cardapio
+        %td= link_to 'Edit', edit_cardapio_path(cardapio)
+        %td= link_to 'Excluir', cardapio, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Cardapio', new_cardapio_path

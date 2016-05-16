@@ -2,9 +2,9 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :data
+    = f.input :data, as: :string
     = f.input :situacao, label:"Situação"
-    = f.association :cliente
+    = f.association :cliente, label_method: :nome
 
   .form-actions
     = f.submit "Salvar"

@@ -1,4 +1,4 @@
-%h1 Listing cardapios
+%h1 Lista de Cardapio
 
 %table
   %thead
@@ -16,10 +16,12 @@
         %td= cardapio.nome
         %td= cardapio.descricao
         %td= cardapio.preco
-        %td= link_to 'Show', cardapio
-        %td= link_to 'Edit', edit_cardapio_path(cardapio)
+        %td= link_to 'Mostrar', cardapio
+        %td= link_to 'Editar', edit_cardapio_path(cardapio)
         %td= link_to 'Excluir', cardapio, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+      
 
 %br
 
-= link_to 'New Cardapio', new_cardapio_path
+= link_to 'Novo Cardapio', new_cardapio_path

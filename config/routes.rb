@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+  root to: 'welcome#index'
+
+
   resources :entregas
   resources :cardapios
   resources :pedidos
   resources :clientes
-  root to: 'visitors#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

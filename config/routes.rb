@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
 
-  resources :entregas
+  resources :entregas  
   resources :cardapios
   resources :pedidos
   resources :clientes

@@ -16,10 +16,10 @@
         %td= entrega.data
         %td= entrega.situacao
         %td= entrega.Pedido
-        %td= link_to 'Show', entrega
-        %td= link_to 'Edit', edit_entrega_path(entrega)
+        %td= link_to 'Mostrar', entrega
+        %td= link_to 'Editar', edit_entrega_path(entrega)
         %td= link_to 'Excluir', entrega, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Entrega', new_entrega_path
+= link_to 'Nova Entrega', new_entrega_path
